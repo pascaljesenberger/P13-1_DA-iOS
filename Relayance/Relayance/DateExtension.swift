@@ -21,4 +21,17 @@ extension Date {
         
         return isoDateFormatter.string(from: date)
     }
+    
+    func getDay() -> Int {
+        return Calendar.current.component(.day, from: self)
+    }
+    
+    func getMonth() -> Int {
+        return Calendar.current.component(.month, from: self)
+    }
+    
+    func getYear() -> Int {
+        return Calendar.current.component(.year, from: self)
+    }
+    
 }
