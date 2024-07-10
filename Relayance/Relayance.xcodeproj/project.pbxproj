@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		422740712C3BF4DC00E7522C /* RelayanceApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422740702C3BF4DC00E7522C /* RelayanceApp.swift */; };
-		422740732C3BF4DC00E7522C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422740722C3BF4DC00E7522C /* ContentView.swift */; };
 		422740752C3BF4DD00E7522C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 422740742C3BF4DD00E7522C /* Assets.xcassets */; };
 		422740782C3BF4DD00E7522C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 422740772C3BF4DD00E7522C /* Preview Assets.xcassets */; };
 		422740822C3BF4DD00E7522C /* RelayanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422740812C3BF4DD00E7522C /* RelayanceTests.swift */; };
@@ -43,7 +42,6 @@
 /* Begin PBXFileReference section */
 		4227406D2C3BF4DC00E7522C /* Relayance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Relayance.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		422740702C3BF4DC00E7522C /* RelayanceApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelayanceApp.swift; sourceTree = "<group>"; };
-		422740722C3BF4DC00E7522C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		422740742C3BF4DD00E7522C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		422740772C3BF4DD00E7522C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4227407D2C3BF4DD00E7522C /* RelayanceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RelayanceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -111,7 +109,6 @@
 				422740EC2C3ECCF900E7522C /* Model.swift */,
 				422740EE2C3ECD1500E7522C /* DateExtension.swift */,
 				422740702C3BF4DC00E7522C /* RelayanceApp.swift */,
-				422740722C3BF4DC00E7522C /* ContentView.swift */,
 				422740742C3BF4DD00E7522C /* Assets.xcassets */,
 				422740762C3BF4DD00E7522C /* Preview Content */,
 				422740F42C3ECFCA00E7522C /* ListClientsView.swift */,
@@ -283,7 +280,6 @@
 				422740ED2C3ECCF900E7522C /* Model.swift in Sources */,
 				422740FB2C3ED0EE00E7522C /* DetailClientView.swift in Sources */,
 				422740EF2C3ECD1500E7522C /* DateExtension.swift in Sources */,
-				422740732C3BF4DC00E7522C /* ContentView.swift in Sources */,
 				422740FD2C3ED18D00E7522C /* AjoutClientView.swift in Sources */,
 				422740712C3BF4DC00E7522C /* RelayanceApp.swift in Sources */,
 				422740F72C3ECFD600E7522C /* ModelData.swift in Sources */,
