@@ -14,7 +14,7 @@ struct ListClientsView: View {
         NavigationStack {
             List(clientsList, id: \.self) { client in
                 NavigationLink {
-                    // vue detail
+                    DetailClientView(client: client)
                 } label: {
                     Text(client.nom)
                         .font(.title3)
