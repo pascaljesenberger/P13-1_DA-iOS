@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ListClientsView: View {
     @State var clientsList: [Client] = ModelData.chargement("Source.json")
+    @State private var showModal: Bool = false
     
     var body: some View {
         NavigationStack {
@@ -24,12 +25,15 @@ struct ListClientsView: View {
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
                     Button("Ajouter un client") {
-                        // vue modal
+                        showModal.toggle()
                     }
                     .foregroundStyle(.orange)
                     .bold()
                 }
             }
+            .sheet(isPresented: $showModal, content: {
+                AjoutClientView(dismissModal: $showModal)
+            })
         }
     }
 
