@@ -13,14 +13,17 @@ final class ClientTests: XCTestCase {
         // Given
         let nom = "Jesenberger"
         let email = "pascal@jesenberger.fr"
-        let dateCreationString = "2025-07-26T00:00:00Z"
-        
+        let dateCreationString = "2023-02-20T09:15:00Z"
+
         // When
         let client = Client(nom: nom, email: email, dateCreationString: dateCreationString)
-        
+
         // Then
         XCTAssertEqual(client.nom, nom)
         XCTAssertEqual(client.email, email)
-        XCTAssertEqual(client.formatDateVersString(), dateCreationString)
+
+        let expectedDate = Date.dateFromString(dateCreationString)
+        XCTAssertNotNil(expectedDate)
+        XCTAssertEqual(client.dateCreation, expectedDate)
     }
 }
