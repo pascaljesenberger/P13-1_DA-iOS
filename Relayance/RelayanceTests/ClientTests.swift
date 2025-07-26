@@ -9,21 +9,44 @@ import XCTest
 @testable import Relayance
 
 final class ClientTests: XCTestCase {
+    
+    private func makeClient(
+        nom: String = "Jesenberger",
+        email: String = "pascal@jesenberger.fr",
+        dateCreationString: String = "2023-02-20T09:15:00Z"
+    ) -> Client {
+        Client(nom: nom, email: email, dateCreationString: dateCreationString)
+    }
+
     func test_GivenValidData_WhenCreatingClient_ThenClientCreated() {
         // Given
-        let nom = "Jesenberger"
-        let email = "pascal@jesenberger.fr"
-        let dateCreationString = "2023-02-20T09:15:00Z"
-
+        let dateCreationString = "2025-07-24T08:30:00Z"
+        
         // When
-        let client = Client(nom: nom, email: email, dateCreationString: dateCreationString)
-
+        let client = makeClient(dateCreationString: dateCreationString)
+        
         // Then
-        XCTAssertEqual(client.nom, nom)
-        XCTAssertEqual(client.email, email)
+        XCTAssertEqual(client.nom, "Jesenberger")
+        XCTAssertEqual(client.email, "pascal@jesenberger.fr")
 
         let expectedDate = Date.dateFromString(dateCreationString)
         XCTAssertNotNil(expectedDate)
         XCTAssertEqual(client.dateCreation, expectedDate)
+    }
+    
+    func test_GivenInvalidDateFormat_WhenCreatingClient_ThenDateCreationIsNow() {
+        // Given
+        let invalidDate = "123456"
+        
+        // When
+        let client = makeClient(dateCreationString: invalidDate)
+        
+        // Then
+        XCTAssertEqual(client.nom, "Jesenberger")
+        XCTAssertEqual(client.email, "pascal@jesenberger.fr")
+
+        let expectedDate = Date.dateFromString(invalidDate)
+        XCTAssertNil(expectedDate)
+        XCTAssertTrue(Calendar.current.isDateInToday(client.dateCreation))
     }
 }
