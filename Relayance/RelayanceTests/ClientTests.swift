@@ -10,6 +10,8 @@ import XCTest
 
 final class ClientTests: XCTestCase {
     
+    // MARK: Helpers
+
     private func makeClient(
         nom: String = "Jesenberger",
         email: String = "pascal@jesenberger.fr",
@@ -17,6 +19,8 @@ final class ClientTests: XCTestCase {
     ) -> Client {
         Client(nom: nom, email: email, dateCreationString: dateCreationString)
     }
+    
+    // MARK: - init(nom:email:dateCreationString:)
 
     func test_GivenValidData_WhenCreatingClient_ThenClientCreated() {
         // Given
@@ -47,6 +51,36 @@ final class ClientTests: XCTestCase {
 
         let expectedDate = Date.dateFromString(invalidDate)
         XCTAssertNil(expectedDate)
+        XCTAssertTrue(Calendar.current.isDateInToday(client.dateCreation))
+    }
+    
+    // MARK: - creerNouveauClient(nom:email:)
+    
+    func test_GivenValidData_WhenCreatingNewClient_ThenReturnsClientWithCurrentDate() {
+        // Given
+        let nom = "Jean"
+        let email = "jean@example.com"
+        
+        // When
+        let client = Client.creerNouveauClient(nom: nom, email: email)
+        
+        // Then
+        XCTAssertEqual(client.nom, nom)
+        XCTAssertEqual(client.email, email)
+        XCTAssertTrue(Calendar.current.isDateInToday(client.dateCreation))
+    }
+    
+    func test_GivenEmptyName_WhenCreatingNewClient_ThenReturnsClientWithEmptyName() {
+        // Given
+        let nom = ""
+        let email = "vide@example.com"
+        
+        // When
+        let client = Client.creerNouveauClient(nom: nom, email: email)
+        
+        // Then
+        XCTAssertEqual(client.nom, nom)
+        XCTAssertEqual(client.email, email)
         XCTAssertTrue(Calendar.current.isDateInToday(client.dateCreation))
     }
 }
