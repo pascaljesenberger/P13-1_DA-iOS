@@ -118,4 +118,31 @@ final class ClientTests: XCTestCase {
         // Then
         XCTAssertFalse(isNew)
     }
+    
+    // MARK: clientExiste()
+    
+    func test_GivenExistingClient_WhenCheckingIfExists_ThenTrue() {
+        // Given
+        let client = makeClient()
+        let clientsList = [client]
+
+        // When
+        let exists = client.clientExiste(clientsList: clientsList)
+
+        // Then
+        XCTAssertTrue(exists)
+    }
+
+    func test_GivenNonExistingClient_WhenCheckingIfExists_ThenFalse() {
+        // Given
+        let client1 = makeClient(nom: "Jean", email: "jean@example.com")
+        let client2 = makeClient(nom: "Marie", email: "marie@example.com")
+        let clientsList = [client1]
+        
+        // When
+        let exists = client2.clientExiste(clientsList: clientsList)
+
+        // Then
+        XCTAssertFalse(exists)
+    }
 }
