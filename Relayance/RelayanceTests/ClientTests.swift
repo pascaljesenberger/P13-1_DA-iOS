@@ -145,4 +145,30 @@ final class ClientTests: XCTestCase {
         // Then
         XCTAssertFalse(exists)
     }
+    
+    // MARK: formatDateVersString()
+    
+    func test_GivenValidDateString_WhenFormattingDate_ThenReturnsFormattedDateString() {
+        // Given
+        let dateString = "2025-07-24T14:45:00Z"
+        let client = makeClient(dateCreationString: dateString)
+
+        // When
+        let formatted = client.formatDateVersString()
+
+        // Then
+        XCTAssertEqual(formatted, "24-07-2025")
+    }
+
+    func test_GivenInvalidDateString_WhenFormattingDate_ThenReturnsFormattedCurrentDate() {
+        // Given
+        let invalidDateString = "invalid-date"
+        let client = makeClient(dateCreationString: invalidDateString)
+
+        // When
+        let formatted = client.formatDateVersString()
+
+        // Then
+        XCTAssertEqual(formatted, Date.stringFromDate(Date.now))
+    }
 }
