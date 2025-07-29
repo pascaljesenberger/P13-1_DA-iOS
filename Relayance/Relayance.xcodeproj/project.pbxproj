@@ -116,16 +116,9 @@
 		4227406F2C3BF4DC00E7522C /* Relayance */ = {
 			isa = PBXGroup;
 			children = (
-				422740EC2C3ECCF900E7522C /* Model.swift */,
-				422740EE2C3ECD1500E7522C /* DateExtension.swift */,
-				422740702C3BF4DC00E7522C /* RelayanceApp.swift */,
-				422740742C3BF4DD00E7522C /* Assets.xcassets */,
-				422740762C3BF4DD00E7522C /* Preview Content */,
-				422740F42C3ECFCA00E7522C /* ListClientsView.swift */,
-				422740F62C3ECFD600E7522C /* ModelData.swift */,
-				422740F82C3ED02400E7522C /* Source.json */,
-				422740FA2C3ED0EE00E7522C /* DetailClientView.swift */,
-				422740FC2C3ED18D00E7522C /* AjoutClientView.swift */,
+				C6473B582E38D51E00469207 /* Models */,
+				C6473B562E38D49200469207 /* Views */,
+				C6473B572E38D4CE00469207 /* Sources */,
 			);
 			path = Relayance;
 			sourceTree = "<group>";
@@ -145,8 +138,7 @@
 				C6E6575C2E3455DF0060AF47 /* ClientTests.swift */,
 				C6473B4A2E38BDB300469207 /* DateExtensionTests.swift */,
 				C6473B4C2E38C25F00469207 /* ModelDataTests.swift */,
-				C6473B4E2E38C31D00469207 /* SourceMock.json */,
-				C6473B512E38CEE600469207 /* InvalidSourceMock.json */,
+				C6473B552E38D47E00469207 /* Mocks */,
 			);
 			path = RelayanceTests;
 			sourceTree = "<group>";
@@ -158,6 +150,46 @@
 				4227408D2C3BF4DD00E7522C /* RelayanceUITestsLaunchTests.swift */,
 			);
 			path = RelayanceUITests;
+			sourceTree = "<group>";
+		};
+		C6473B552E38D47E00469207 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				C6473B4E2E38C31D00469207 /* SourceMock.json */,
+				C6473B512E38CEE600469207 /* InvalidSourceMock.json */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		C6473B562E38D49200469207 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				422740FC2C3ED18D00E7522C /* AjoutClientView.swift */,
+				422740FA2C3ED0EE00E7522C /* DetailClientView.swift */,
+				422740F42C3ECFCA00E7522C /* ListClientsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C6473B572E38D4CE00469207 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				422740762C3BF4DD00E7522C /* Preview Content */,
+				422740742C3BF4DD00E7522C /* Assets.xcassets */,
+				422740F82C3ED02400E7522C /* Source.json */,
+				422740702C3BF4DC00E7522C /* RelayanceApp.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		C6473B582E38D51E00469207 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				422740EE2C3ECD1500E7522C /* DateExtension.swift */,
+				422740F62C3ECFD600E7522C /* ModelData.swift */,
+				422740EC2C3ECCF900E7522C /* Model.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
