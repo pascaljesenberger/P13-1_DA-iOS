@@ -119,7 +119,7 @@ final class ClientTests: XCTestCase {
         XCTAssertFalse(isNew)
     }
     
-    // MARK: clientExiste()
+    // MARK: clientExiste(clientsList:)
     
     func test_GivenExistingClient_WhenCheckingIfExists_ThenTrue() {
         // Given
