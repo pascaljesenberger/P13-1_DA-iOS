@@ -1,0 +1,43 @@
+[
+    {
+        "nom": "Frida Kahlo",
+        "email": "frida.kahlo@example.com",
+        "date_creation": "2024-01-15T08:30:00Z"
+    },
+    {
+        "nom": "Mahatma Gandhi",
+        "email": "mahatma.gandhi@example.com",
+        "date_creation": "2023-02-20T09:15:00Z"
+    },
+    {
+        "nom": "Malala Yousafzai",
+        "email": "malala.yousafzai@example.com",
+        "date_creation": "2022-03-10T10:45:00Z"
+    },
+    {
+        "nom": "Rosa Parks",
+        "email": "rosa.parks@example.com",
+        "date_creation": "2023-04-25T11:30:00Z"
+    },
+    {
+        "nom": "Nelson Mandela",
+        "email": "nelson.mandela@example.com",
+        "date_creation": "2021-05-30T12:00:00Z"
+    },
+    {
+        "nom": "Ada Lovelace",
+        "email": "ada.lovelace@example.com",
+        "date_creation": "2024-06-15T13:45:00Z"
+    },
+    {
+        "nom": "Chimamanda Ngozi Adichie",
+        "email": "chimamanda.adichie@example.com",
+        "date_creation": "2023-07-20T14:30:00Z"
+    },
+    {
+        "nom": "Wangari Maathai",
+        "email": "wangari.maathai@example.com",
+        "date_creation": "2022-08-25T15:15:00Z"
+    }
+]
+
