@@ -73,4 +73,76 @@ final class DateExtensionTests: XCTestCase {
                                           Calendar.current.component(.month, from: currentDate),
                                           Calendar.current.component(.year, from: currentDate)))
     }
+    
+    // MARK: - getDay()
+    
+    func test_GivenSpecificDate_WhenGettingDay_ThenReturnsCorrectDay() {
+        // Given
+        let date = makeDate(year: 2025, month: 7, day: 15)
+        
+        // When
+        let day = date.getDay()
+        
+        // Then
+        XCTAssertEqual(day, 15)
+    }
+    
+    func test_GivenCurrentDate_WhenGettingDay_ThenReturnsCurrentDay() {
+        // Given
+        let currentDate = Date()
+        
+        // When
+        let day = currentDate.getDay()
+        
+        // Then
+        XCTAssertEqual(day, Calendar.current.component(.day, from: currentDate))
+    }
+    
+    // MARK: - getMonth()
+    
+    func test_GivenSpecificDate_WhenGettingMonth_ThenReturnsCorrectMonth() {
+        // Given
+        let date = makeDate(year: 2025, month: 12, day: 1)
+        
+        // When
+        let month = date.getMonth()
+        
+        // Then
+        XCTAssertEqual(month, 12)
+    }
+    
+    func test_GivenCurrentDate_WhenGettingMonth_ThenReturnsCurrentMonth() {
+        // Given
+        let currentDate = Date()
+        
+        // When
+        let month = currentDate.getMonth()
+        
+        // Then
+        XCTAssertEqual(month, Calendar.current.component(.month, from: currentDate))
+    }
+    
+    // MARK: - getYear()
+    
+    func test_GivenSpecificDate_WhenGettingYear_ThenReturnsCorrectYear() {
+        // Given
+        let date = makeDate(year: 2023, month: 1, day: 1)
+        
+        // When
+        let year = date.getYear()
+        
+        // Then
+        XCTAssertEqual(year, 2023)
+    }
+    
+    func test_GivenCurrentDate_WhenGettingYear_ThenReturnsCurrentYear() {
+        // Given
+        let currentDate = Date()
+        
+        // When
+        let year = currentDate.getYear()
+        
+        // Then
+        XCTAssertEqual(year, Calendar.current.component(.year, from: currentDate))
+    }
 }
