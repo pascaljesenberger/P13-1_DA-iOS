@@ -20,6 +20,17 @@ final class ClientTests: XCTestCase {
         Client(nom: nom, email: email, dateCreationString: dateCreationString)
     }
     
+    private func makeClientWithOffsetFromToday(daysOffset: Int) -> Client {
+        let calendar = Calendar.current
+        guard let date = calendar.date(byAdding: .day, value: daysOffset, to: Date()) else {
+            fatalError("Invalid date offset")
+        }
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss'Z'"
+        let dateString = dateFormatter.string(from: date)
+        return makeClient(dateCreationString: dateString)
+    }
+    
     // MARK: - init(nom:email:dateCreationString:)
 
     func test_GivenValidData_WhenCreatingClient_ThenClientCreated() {
@@ -82,5 +93,29 @@ final class ClientTests: XCTestCase {
         XCTAssertEqual(client.nom, nom)
         XCTAssertEqual(client.email, email)
         XCTAssertTrue(Calendar.current.isDateInToday(client.dateCreation))
+    }
+    
+    // MARK: estNouveauClient()
+    
+    func test_GivenClientCreatedToday_WhenCheckingIfNew_ThenTrue() {
+        // Given
+        let client = makeClientWithOffsetFromToday(daysOffset: 0)
+
+        // When
+        let isNew = client.estNouveauClient()
+
+        // Then
+        XCTAssertTrue(isNew)
+    }
+
+    func test_GivenClientCreatedYesterday_WhenCheckingIfNew_ThenFalse() {
+        // Given
+        let client = makeClientWithOffsetFromToday(daysOffset: -1)
+
+        // When
+        let isNew = client.estNouveauClient()
+
+        // Then
+        XCTAssertFalse(isNew)
     }
 }
