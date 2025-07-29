@@ -22,7 +22,8 @@
 		422740FD2C3ED18D00E7522C /* AjoutClientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422740FC2C3ED18D00E7522C /* AjoutClientView.swift */; };
 		C6473B4B2E38BDB300469207 /* DateExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6473B4A2E38BDB300469207 /* DateExtensionTests.swift */; };
 		C6473B4D2E38C25F00469207 /* ModelDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6473B4C2E38C25F00469207 /* ModelDataTests.swift */; };
-		C6473B502E38C74700469207 /* SourceMock.json in Resources */ = {isa = PBXBuildFile; fileRef = C6473B4E2E38C31D00469207 /* SourceMock.json */; };
+		C6473B532E38D16B00469207 /* SourceMock.json in Resources */ = {isa = PBXBuildFile; fileRef = C6473B4E2E38C31D00469207 /* SourceMock.json */; };
+		C6473B542E38D17000469207 /* InvalidSourceMock.json in Resources */ = {isa = PBXBuildFile; fileRef = C6473B512E38CEE600469207 /* InvalidSourceMock.json */; };
 		C6E6575D2E3455DF0060AF47 /* ClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E6575C2E3455DF0060AF47 /* ClientTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -63,6 +64,7 @@
 		C6473B4A2E38BDB300469207 /* DateExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensionTests.swift; sourceTree = "<group>"; };
 		C6473B4C2E38C25F00469207 /* ModelDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelDataTests.swift; sourceTree = "<group>"; };
 		C6473B4E2E38C31D00469207 /* SourceMock.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SourceMock.json; sourceTree = "<group>"; };
+		C6473B512E38CEE600469207 /* InvalidSourceMock.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = InvalidSourceMock.json; sourceTree = "<group>"; };
 		C6E6575C2E3455DF0060AF47 /* ClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -144,6 +146,7 @@
 				C6473B4A2E38BDB300469207 /* DateExtensionTests.swift */,
 				C6473B4C2E38C25F00469207 /* ModelDataTests.swift */,
 				C6473B4E2E38C31D00469207 /* SourceMock.json */,
+				C6473B512E38CEE600469207 /* InvalidSourceMock.json */,
 			);
 			path = RelayanceTests;
 			sourceTree = "<group>";
@@ -263,7 +266,6 @@
 			files = (
 				422740782C3BF4DD00E7522C /* Preview Assets.xcassets in Resources */,
 				422740F92C3ED02400E7522C /* Source.json in Resources */,
-				C6473B502E38C74700469207 /* SourceMock.json in Resources */,
 				422740752C3BF4DD00E7522C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -272,6 +274,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6473B542E38D17000469207 /* InvalidSourceMock.json in Resources */,
+				C6473B532E38D16B00469207 /* SourceMock.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ListClientsView: View {
-    @State var clientsList: [Client] = ModelData.chargement("Source.json")
+    @State var clientsList: [Client] = []
     @State private var showModal: Bool = false
     
     var body: some View {
@@ -35,8 +35,15 @@ struct ListClientsView: View {
                 AjoutClientView(dismissModal: $showModal)
             })
         }
+        .onAppear {
+            loadSource()
+        }
     }
 
+    private func loadSource() {
+        guard clientsList.isEmpty else { return }
+        clientsList = (try? ModelData.chargement("Source.json") as [Client]) ?? []
+    }
 }
 
 #Preview {

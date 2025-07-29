@@ -10,7 +10,7 @@ import XCTest
 
 final class ClientTests: XCTestCase {
     
-    // MARK: Helpers
+    // MARK: - Helpers
 
     private func makeClient(
         nom: String = "Jesenberger",
@@ -95,7 +95,7 @@ final class ClientTests: XCTestCase {
         XCTAssertTrue(Calendar.current.isDateInToday(client.dateCreation))
     }
     
-    // MARK: estNouveauClient()
+    // MARK: - estNouveauClient()
     
     func test_GivenClientCreatedToday_WhenCheckingIfNew_ThenTrue() {
         // Given
@@ -119,7 +119,7 @@ final class ClientTests: XCTestCase {
         XCTAssertFalse(isNew)
     }
     
-    // MARK: clientExiste(clientsList:)
+    // MARK: - clientExiste(clientsList:)
     
     func test_GivenExistingClient_WhenCheckingIfExists_ThenTrue() {
         // Given
@@ -146,7 +146,7 @@ final class ClientTests: XCTestCase {
         XCTAssertFalse(exists)
     }
     
-    // MARK: formatDateVersString()
+    // MARK: - formatDateVersString()
     
     func test_GivenValidDateString_WhenFormattingDate_ThenReturnsFormattedDateString() {
         // Given

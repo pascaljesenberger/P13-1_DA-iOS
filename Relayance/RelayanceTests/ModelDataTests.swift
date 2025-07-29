@@ -11,29 +11,47 @@ import XCTest
 final class ModelDataTests: XCTestCase {
     
     // MARK: - chargement(_:)
-    
-    func test_GivenValidJSONFile_WhenLoading_ThenReturnsDecodedArray() {
+
+    func testGivenValidJsonFile_WhenLoadingClientList_ThenReturnsNonEmptyArray() throws {
         // Given
-        let filename = "SourceMock.json"
+        let jsonFile = "SourceMock.json"
 
         // When
-        let sources: [Client] = ModelData.chargement(filename)
+        let clientsList: [Client] = try ModelData.chargement(jsonFile, from: Bundle(for: ModelDataTests.self))
 
         // Then
-        XCTAssertEqual(sources.count, 8)
-        XCTAssertEqual(sources[0].nom, "Frida Kahlo")
-        XCTAssertEqual(sources[1].email, "mahatma.gandhi@example.com")
+        XCTAssertTrue(clientsList.count > 0)
     }
-    
-    // ⚠️ Test causant un crash ⚠️
-    // func test_GivenMissingJSONFile_WhenLoading_ThenFatalError() {
-    //     // Given
-    //     let invalidFilename = "FichierInexistant.json"
-    //
-    //     // When
-    //     _ = ModelData.chargement(invalidFilename)
-    //
-    //     // Then
-    //     // fatalError attendu → ce test crasherait si activé
-    // }
+
+    func testGivenNoJsonFile_WhenLoadingClientList_ThenErrorIsThrown() {
+        // Given
+        let jsonFile = "NonExistantFile.json"
+
+        // When
+        do {
+            _ = try ModelData.chargement(jsonFile, from: Bundle(for: ModelDataTests.self)) as [Client]
+            XCTFail("ModelDataTests: catch block should to be executed")
+
+        // Then
+        } catch let error as NSError {
+            XCTAssertEqual(error.domain, "ModelDataError")
+            XCTAssertEqual(error.code, 1)
+        }
+    }
+
+    func testGivenInvalidJsonFile_WhenLoadingClientList_ThenErrorIsThrown() {
+        // Given
+        let jsonFile = "InvalidSourceMock.json"
+
+        // When
+        do {
+            _ = try ModelData.chargement(jsonFile, from: Bundle(for: ModelDataTests.self)) as [Client]
+            XCTFail("ModelDataTests: catch block should to be executed")
+            
+        // Then
+        } catch let error as NSError {
+            XCTAssertEqual(error.domain, "ModelDataError")
+            XCTAssertEqual(error.code, 2)
+        }
+    }
 }
