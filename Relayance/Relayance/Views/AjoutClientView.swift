@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AjoutClientView: View {
-    @StateObject private var viewModel = RelayanceViewModel()
+    @ObservedObject var viewModel: RelayanceViewModel
     
     var body: some View {
         VStack {
@@ -38,5 +38,5 @@ struct AjoutClientView: View {
 }
 
 #Preview {
-    AjoutClientView()
+    AjoutClientView(viewModel: RelayanceViewModel())
 }

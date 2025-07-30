@@ -8,12 +8,11 @@
 import SwiftUI
 
 struct ListClientsView: View {
-    @State var clientsList: [Client] = []
-    @State private var showModal: Bool = false
+    @StateObject private var viewModel = RelayanceViewModel()
     
     var body: some View {
         NavigationStack {
-            List(clientsList, id: \.self) { client in
+            List(viewModel.clientsList, id: \.self) { client in
                 NavigationLink {
                     DetailClientView(client: client)
                 } label: {
@@ -25,24 +24,19 @@ struct ListClientsView: View {
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
                     Button("Ajouter un client") {
-                        showModal.toggle()
+                        viewModel.showModal.toggle()
                     }
                     .foregroundStyle(.orange)
                     .bold()
                 }
             }
-            .sheet(isPresented: $showModal, content: {
-                AjoutClientView(dismissModal: $showModal)
+            .sheet(isPresented: $viewModel.showModal, content: {
+                AjoutClientView(viewModel: viewModel)
             })
         }
         .onAppear {
-            loadSource()
+            viewModel.loadSource()
         }
-    }
-
-    private func loadSource() {
-        guard clientsList.isEmpty else { return }
-        clientsList = (try? ModelData.chargement("Source.json") as [Client]) ?? []
     }
 }
 
