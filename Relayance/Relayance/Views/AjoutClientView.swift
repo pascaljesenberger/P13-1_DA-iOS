@@ -8,9 +8,7 @@
 import SwiftUI
 
 struct AjoutClientView: View {
-    @Binding var dismissModal: Bool
-    @State var nom: String = ""
-    @State var email: String = ""
+    @StateObject private var viewModel = RelayanceViewModel()
     
     var body: some View {
         VStack {
@@ -19,13 +17,12 @@ struct AjoutClientView: View {
                 .bold()
                 .multilineTextAlignment(.center)
             Spacer()
-            TextField("Nom", text: $nom)
+            TextField("Nom", text: $viewModel.nom)
                 .font(.title2)
-            TextField("Email", text: $email)
+            TextField("Email", text: $viewModel.email)
                 .font(.title2)
             Button("Ajouter") {
-                //Ajout d'un client
-                dismissModal.toggle()
+                viewModel.ajouterClient()
             }
             .padding(.horizontal, 50)
             .padding(.vertical)
@@ -41,5 +38,5 @@ struct AjoutClientView: View {
 }
 
 #Preview {
-    AjoutClientView(dismissModal: .constant(false))
+    AjoutClientView()
 }
