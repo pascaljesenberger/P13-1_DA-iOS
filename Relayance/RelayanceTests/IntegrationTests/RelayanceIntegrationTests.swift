@@ -61,6 +61,19 @@ final class RelayanceIntegrationTests: XCTestCase {
         XCTAssertEqual(viewModel.clientsList.count, countAvant)
         XCTAssertEqual(viewModel.errorMessage, "Veuillez entrer un email valide")
     }
+    
+    func testAjoutClientNomVide() {
+        // Given
+        configurationAjout(nom: "", email: "marie.curie@example.com")
+        let countAvant = viewModel.clientsList.count
+
+        // When
+        viewModel.ajouterClient()
+
+        // Then
+        XCTAssertEqual(viewModel.clientsList.count, countAvant)
+        XCTAssertEqual(viewModel.errorMessage, "Veuillez entrer un nom")
+    }
 
     // MARK: - Tests Suppression Client
 
