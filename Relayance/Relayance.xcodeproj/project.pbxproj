@@ -25,6 +25,7 @@
 		C6473B532E38D16B00469207 /* SourceMock.json in Resources */ = {isa = PBXBuildFile; fileRef = C6473B4E2E38C31D00469207 /* SourceMock.json */; };
 		C6473B542E38D17000469207 /* InvalidSourceMock.json in Resources */ = {isa = PBXBuildFile; fileRef = C6473B512E38CEE600469207 /* InvalidSourceMock.json */; };
 		C6473B5B2E38D5BA00469207 /* RelayanceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6473B5A2E38D5BA00469207 /* RelayanceViewModel.swift */; };
+		C6E4008F2E3B155400E4998D /* RelayanceIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E4008E2E3B155400E4998D /* RelayanceIntegrationTests.swift */; };
 		C6E6575D2E3455DF0060AF47 /* ClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E6575C2E3455DF0060AF47 /* ClientTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +68,7 @@
 		C6473B4E2E38C31D00469207 /* SourceMock.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SourceMock.json; sourceTree = "<group>"; };
 		C6473B512E38CEE600469207 /* InvalidSourceMock.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = InvalidSourceMock.json; sourceTree = "<group>"; };
 		C6473B5A2E38D5BA00469207 /* RelayanceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelayanceViewModel.swift; sourceTree = "<group>"; };
+		C6E4008E2E3B155400E4998D /* RelayanceIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelayanceIntegrationTests.swift; sourceTree = "<group>"; };
 		C6E6575C2E3455DF0060AF47 /* ClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -138,11 +140,9 @@
 		422740802C3BF4DD00E7522C /* RelayanceTests */ = {
 			isa = PBXGroup;
 			children = (
-				422740812C3BF4DD00E7522C /* RelayanceTests.swift */,
-				C6E6575C2E3455DF0060AF47 /* ClientTests.swift */,
-				C6473B4A2E38BDB300469207 /* DateExtensionTests.swift */,
-				C6473B4C2E38C25F00469207 /* ModelDataTests.swift */,
+				C6E400902E3B159300E4998D /* UnitTests */,
 				C6473B552E38D47E00469207 /* Mocks */,
+				C6E400912E3B15A800E4998D /* IntegrationTests */,
 			);
 			path = RelayanceTests;
 			sourceTree = "<group>";
@@ -201,6 +201,25 @@
 				C6473B5A2E38D5BA00469207 /* RelayanceViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		C6E400902E3B159300E4998D /* UnitTests */ = {
+			isa = PBXGroup;
+			children = (
+				422740812C3BF4DD00E7522C /* RelayanceTests.swift */,
+				C6E6575C2E3455DF0060AF47 /* ClientTests.swift */,
+				C6473B4A2E38BDB300469207 /* DateExtensionTests.swift */,
+				C6473B4C2E38C25F00469207 /* ModelDataTests.swift */,
+			);
+			path = UnitTests;
+			sourceTree = "<group>";
+		};
+		C6E400912E3B15A800E4998D /* IntegrationTests */ = {
+			isa = PBXGroup;
+			children = (
+				C6E4008E2E3B155400E4998D /* RelayanceIntegrationTests.swift */,
+			);
+			path = IntegrationTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -352,6 +371,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C6473B4B2E38BDB300469207 /* DateExtensionTests.swift in Sources */,
+				C6E4008F2E3B155400E4998D /* RelayanceIntegrationTests.swift in Sources */,
 				C6473B4D2E38C25F00469207 /* ModelDataTests.swift in Sources */,
 				C6E6575D2E3455DF0060AF47 /* ClientTests.swift in Sources */,
 				422740822C3BF4DD00E7522C /* RelayanceTests.swift in Sources */,
