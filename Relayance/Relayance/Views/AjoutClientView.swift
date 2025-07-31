@@ -16,11 +16,15 @@ struct AjoutClientView: View {
                 .font(.largeTitle)
                 .bold()
                 .multilineTextAlignment(.center)
+            
             Spacer()
+            
             TextField("Nom", text: $viewModel.nom)
                 .font(.title2)
+            
             TextField("Email", text: $viewModel.email)
                 .font(.title2)
+            
             Button("Ajouter") {
                 viewModel.ajouterClient()
             }
@@ -31,6 +35,12 @@ struct AjoutClientView: View {
             .background(RoundedRectangle(cornerRadius: 10).fill(.orange))
             .foregroundStyle(.white)
             .padding(.top, 50)
+            
+            Text(viewModel.errorMessage ?? "")
+                .font(.title3)
+                .foregroundColor(.red)
+                .bold()
+            
             Spacer()
         }
         .padding()
